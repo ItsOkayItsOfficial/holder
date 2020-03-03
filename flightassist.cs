@@ -58,9 +58,9 @@ public void Main(string argument, UpdateType updateType)
     activeModule?.Tick();
     if (textPanel != null)
     {
-        textPanel.WritePublicText(GetTextPanelHeader());
+        textPanel.WriteText(GetTextPanelHeader());
         if (activeModule != null)
-            textPanel.WritePublicText(activeModule?.GetPrintString(), true);
+            textPanel.WriteText(activeModule?.GetPrintString(), true);
     }
 }
 
@@ -117,7 +117,7 @@ private void GetBlocks()
         textPanel = textPanels[0];
         textPanel.Font = "Monospace";
         textPanel.FontSize = 1.0f;
-        textPanel.ShowPublicTextOnScreen();
+        textPanel.WriteText("");
     }
 
     blockGroup.GetBlocksOfType<IMyGyro>(gyros);
